@@ -60,7 +60,7 @@ jobs:
       - uses: julia-actions/setup-julia@v1
         with:
           version: '^1.6.0-0' # delete this line once Julia 1.6 is released
-          version: '1'        # uncomment this line once Julia 1.6 is released
+          # version: '1'      # uncomment this line once Julia 1.6 is released
       - run: |
           julia --project=docs -e '
             using Pkg
