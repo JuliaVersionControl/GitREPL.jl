@@ -2,11 +2,11 @@ using GitRepl
 using Test
 
 function withtempdir(f::Function)
-    original_directory = pwd()
     mktempdir() do tmp_dir
-        return f(tmp_dir)
+        cd(tmp_dir) do
+            f(tmp_dir)
+        end
     end
-    cd(original_directory)
     return nothing
 end
 
