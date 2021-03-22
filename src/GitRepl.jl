@@ -5,9 +5,9 @@ import ReplMaker
 
 export gitrepl
 
-const GIT_REPL_MODE_NAME = "GitRepl.jl Git REPL mode"
+const GIT_REPL_MODE_NAME        = "GitRepl.jl Git REPL mode"
 const GIT_REPL_MODE_PROMPT_TEXT = "git> "
-const GIT_REPL_MODE_START_KEY = ','
+const GIT_REPL_MODE_START_KEY   = ','
 
 function _gitrepl_parser(repl_input::AbstractString)
     return quote
@@ -17,17 +17,48 @@ function _gitrepl_parser(repl_input::AbstractString)
     end
 end
 
-function gitrepl(; mode_name = GIT_REPL_MODE_NAME,
-                   prompt_text = GIT_REPL_MODE_PROMPT_TEXT,
-                   start_key = GIT_REPL_MODE_START_KEY,
+"""
+    gitrepl(; kwargs...)
+
+Set up the Git REPL mode.
+
+## Optional keyword arguments
+
+| Name          | Type             | Default Value                        |
+|:------------- | :--------------- |:-------------------------------------|
+| `mode_name`   | `AbstractString` | `$(repr(GIT_REPL_MODE_NAME))`        |
+| `prompt_text` | `AbstractString` | `$(repr(GIT_REPL_MODE_PROMPT_TEXT))` |
+| `start_key`   | `AbstractChar`   | `$(repr(GIT_REPL_MODE_START_KEY))`   |
+
+## Descriptions of optional keyword arguments:
+
+| Name          | Description                                         |
+|:------------- | :-------------------------------------------------- |
+| `mode_name`   | Name of the REPL mode                               |
+| `prompt_text` | Prompt text to display when the REPL mode is active |
+| `start_key`   | Key to press to enter the REPL mode                 |
+
+"""
+function gitrepl(; mode_name::AbstractString   = GIT_REPL_MODE_NAME,
+                   prompt_text::AbstractString = GIT_REPL_MODE_PROMPT_TEXT,
+                   start_key::AbstractChar     = GIT_REPL_MODE_START_KEY,
                    kwargs...)
     ReplMaker.initrepl(
         _gitrepl_parser;
-        mode_name = mode_name,
-        prompt_text = prompt_text,
-        start_key = start_key,
-        kwargs...,
+        mode_name,
+        prompt_text,
+        start_key,
+        kwargs...
     )
+    return nothing
+end
+
+function __init__()
+    try
+        gitrepl()
+    catch ex
+        @error("", exception=(ex, catch_backtrace()))
+    end
     return nothing
 end
 
