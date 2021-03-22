@@ -45,12 +45,8 @@ function gitrepl(; mode_name::AbstractString   = GIT_REPL_MODE_NAME,
                    kwargs...)
     ReplMaker.initrepl(
         _gitrepl_parser;
-        mode_name,
-        prompt_text,
-        start_key,
-        kwargs...
-    )
-    return nothing
+        mode_name, prompt_text, start_key, kwargs...
+    ); return nothing
 end
 
 function __init__()
