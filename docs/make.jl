@@ -20,4 +20,5 @@ makedocs(;
 
 deploydocs(;
     repo="github.com/JuliaVersionControl/GitRepl.jl",
+    devbranch="main",
 )
