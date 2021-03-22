@@ -5,7 +5,7 @@ DocMeta.setdocmeta!(GitRepl, :DocTestSetup, :(using GitRepl); recursive=true)
 
 makedocs(;
     modules=[GitRepl],
-    authors="Dilum Aluthge, contributors",
+    authors="Dilum Aluthge and contributors",
     repo="https://github.com/JuliaVersionControl/GitRepl.jl/blob/{commit}{path}#{line}",
     sitename="GitRepl.jl",
     format=Documenter.HTML(;
@@ -16,6 +16,7 @@ makedocs(;
     pages=[
         "Home" => "index.md",
     ],
+    strict=true,
 )
 
 deploydocs(;

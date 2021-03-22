@@ -1,5 +1,6 @@
 module GitRepl
 
-# Write your package code here.
+import GitCommand
+import ReplMaker
 
-end
+end # module
