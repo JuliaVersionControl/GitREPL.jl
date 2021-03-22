@@ -1,0 +1,13 @@
+name = "GitRepl"
+uuid = "86bc0129-654e-4751-9b96-b173469afcbd"
+authors = ["Dilum Aluthge", "contributors"]
+version = "0.1.0"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+julia = "1.6"
+
+[targets]
+test = ["Test"]
