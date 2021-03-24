@@ -10,8 +10,6 @@
 ```julia
 julia> using GitRepl
 
-julia> gitrepl() # you only need to run this once per Julia session
-
 # Press , to enter the Git REPL mode
 
 git> clone https://github.com/JuliaRegistries/General
