@@ -1,16 +1,16 @@
-using GitRepl
+using GitREPL
 using Documenter
 
-DocMeta.setdocmeta!(GitRepl, :DocTestSetup, :(using GitRepl); recursive=true)
+DocMeta.setdocmeta!(GitREPL, :DocTestSetup, :(using GitREPL); recursive=true)
 
 makedocs(;
-    modules=[GitRepl],
+    modules=[GitREPL],
     authors="Dilum Aluthge and contributors",
-    repo="https://github.com/JuliaVersionControl/GitRepl.jl/blob/{commit}{path}#{line}",
-    sitename="GitRepl.jl",
+    repo="https://github.com/JuliaVersionControl/GitREPL.jl/blob/{commit}{path}#{line}",
+    sitename="GitREPL.jl",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://JuliaVersionControl.github.io/GitRepl.jl",
+        canonical="https://JuliaVersionControl.github.io/GitREPL.jl",
         assets=String[],
     ),
     pages=[
@@ -20,6 +20,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/JuliaVersionControl/GitRepl.jl",
+    repo="github.com/JuliaVersionControl/GitREPL.jl",
     devbranch="main",
 )

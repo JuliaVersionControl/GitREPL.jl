@@ -1,4 +1,4 @@
-name = "GitRepl"
+name = "GitREPL"
 uuid = "86bc0129-654e-4751-9b96-b173469afcbd"
 authors = ["Dilum Aluthge", "contributors"]
 version = "1.0.0"

@@ -1,4 +1,4 @@
-using GitRepl
+using GitREPL
 using Test
 
 function withtempdir(f::Function)
@@ -10,16 +10,16 @@ function withtempdir(f::Function)
     return nothing
 end
 
-@testset "GitRepl.jl" begin
+@testset "GitREPL.jl" begin
     withtempdir() do tmp_dir
-        @test !isdir("GitRepl.jl")
-        @test !isfile(joinpath("GitRepl.jl", "Project.toml"))
-        expr = GitRepl._gitrepl_parser("clone https://github.com/JuliaVersionControl/GitRepl.jl")
+        @test !isdir("GitREPL.jl")
+        @test !isfile(joinpath("GitREPL.jl", "Project.toml"))
+        expr = GitREPL._gitrepl_parser("clone https://github.com/JuliaVersionControl/GitREPL.jl")
         @test expr isa Expr
-        @test !isdir("GitRepl.jl")
-        @test !isfile(joinpath("GitRepl.jl", "Project.toml"))
+        @test !isdir("GitREPL.jl")
+        @test !isfile(joinpath("GitREPL.jl", "Project.toml"))
         @eval $(expr)
-        @test isdir("GitRepl.jl")
-        @test isfile(joinpath("GitRepl.jl", "Project.toml"))
+        @test isdir("GitREPL.jl")
+        @test isfile(joinpath("GitREPL.jl", "Project.toml"))
     end
 end

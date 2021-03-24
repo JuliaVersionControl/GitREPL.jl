@@ -1,14 +1,14 @@
 ```@meta
-CurrentModule = GitRepl
+CurrentModule = GitREPL
 ```
 
-# GitRepl
+# GitREPL
 
-Documentation for [GitRepl](https://github.com/JuliaVersionControl/GitRepl.jl).
+Documentation for [GitREPL](https://github.com/JuliaVersionControl/GitREPL.jl).
 
 ```@index
 ```
 
 ```@autodocs
-Modules = [GitRepl]
+Modules = [GitREPL]
 ```
