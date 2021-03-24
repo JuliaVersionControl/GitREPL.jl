@@ -59,7 +59,8 @@ function __init__()
         gitrepl()
     catch ex
         msg = "Unable to automatically initialize the Git REPL mode"
-        @error(msg, exception=(ex, catch_backtrace()))
+        @debug(msg, exception=(ex, catch_backtrace()))
+        @warn(msg)
     end
     return nothing
 end
