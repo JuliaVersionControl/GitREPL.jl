@@ -18,6 +18,7 @@ function _gitrepl_parser(repl_input::AbstractString)
 end
 
 """
+    gitrepl()
     gitrepl(; kwargs...)
 
 Set up the Git REPL mode.
