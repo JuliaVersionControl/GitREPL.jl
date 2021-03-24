@@ -4,11 +4,11 @@ authors = ["Dilum Aluthge", "contributors"]
 version = "1.0.0"
 
 [deps]
-GitCommand = "49b5b516-ca3f-4003-a081-42bdcf55082d"
+Git = "d7ba0133-e1db-5d97-8f8c-041e4b3a1eb2"
 ReplMaker = "b873ce64-0db9-51f5-a568-4457d8e49576"
 
 [compat]
-GitCommand = "2.2.1"
+Git = "1"
 ReplMaker = "0.2.4"
 julia = "1.6"
 

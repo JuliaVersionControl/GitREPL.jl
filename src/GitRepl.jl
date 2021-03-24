@@ -1,6 +1,6 @@
 module GitRepl
 
-import GitCommand
+import Git
 import ReplMaker
 
 export gitrepl
@@ -12,7 +12,7 @@ const GIT_REPL_MODE_START_KEY   = ','
 function _gitrepl_parser(repl_input::AbstractString)
     return quote
         repl_input = $(Expr(:quote, repl_input))
-        run(`$(GitRepl.GitCommand.git()) $(split(repl_input))`)
+        run(`$(GitRepl.Git.git()) $(split(repl_input))`)
         return nothing
     end
 end
