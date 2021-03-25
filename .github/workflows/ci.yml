@@ -69,9 +69,9 @@ jobs:
       - run: |
           julia --project=docs -e '
             using Documenter: DocMeta, doctest
-            using GitRepl
-            DocMeta.setdocmeta!(GitRepl, :DocTestSetup, :(using GitRepl); recursive=true)
-            doctest(GitRepl)'
+            using GitREPL
+            DocMeta.setdocmeta!(GitREPL, :DocTestSetup, :(using GitREPL); recursive=true)
+            doctest(GitREPL)'
       - run: julia --project=docs docs/make.jl
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
